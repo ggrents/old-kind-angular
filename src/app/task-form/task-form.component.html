@@ -1,0 +1,6 @@
+<form (submit)="addTask()">
+  <label for="title">Название задачи:</label>
+  <input type="text" id="title" name="title" [(ngModel)]="taskTitle" required />
+
+  <button type="submit">Добавить задачу</button>
+</form>

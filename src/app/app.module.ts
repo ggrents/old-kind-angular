@@ -1,30 +1,30 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { FormsModule } from '@angular/forms';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
-import { ComponentFComponent } from './component-f/component-f.component';
-import { ComponentDComponent } from './component-d/component-d.component';
+import { TaskFormComponent } from './task-form/task-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TaskListComponent,
+    TaskDetailsComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
-    ComponentFComponent,
-    ComponentDComponent
+    TaskFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

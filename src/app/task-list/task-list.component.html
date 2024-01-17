@@ -1,0 +1,16 @@
+<div class="taskLst">
+  <div *ngFor="let task of tasks">
+    <input
+      type="checkbox"
+      [(ngModel)]="task.completed"
+      (ngModelChange)="toogleTask(task.id)"
+    />
+    <div [ngStyle]="{ color: task.completed ? 'green' : 'black' }">
+      <a [routerLink]="['/task-details', task.id]">
+        <h2>{{ task.title }}</h2>
+        <h3>{{ task.id }}</h3>
+      </a>
+    </div>
+    <button (click)="deleteTask(task.id)">Delete</button>
+  </div>
+</div>
